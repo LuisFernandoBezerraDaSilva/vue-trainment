@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <exampleList msg="Welcome to Your Vue.js App"/>
+    <exampleForm msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
-import exampleList from './components/exampleList.vue'
+import exampleForm from './components/exampleForm.vue'
 
 export default {
   name: 'App',
   components: {
-    exampleList
+    exampleForm
   }
 }
 </script>

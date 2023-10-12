@@ -1,12 +1,6 @@
 <template>
   <div class="field">
-    <div class="mt-2">Nome: {{ text }}</div>
-    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
-    <div class="mt-2">Idade: {{ text }}</div>
-    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
-    <div class="mt-2">Email: {{ text }}</div>
-    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
-    <b-button variant="success">Send</b-button>
+    <b-table-lite striped hover :items="items"></b-table-lite>
     
   </div>
 </template>
