@@ -1,7 +1,13 @@
 <template>
-  <div class="hello">
+  <div class="field">
+    <div class="mt-2">Nome: {{ text }}</div>
     <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
-    <div class="mt-2">Value: {{ text }}</div>
+    <div class="mt-2">Idade: {{ text }}</div>
+    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+    <div class="mt-2">Email: {{ text }}</div>
+    <b-form-input v-model="text" placeholder="Enter your name"></b-form-input>
+    <b-button variant="success">Send</b-button>
+    
   </div>
 </template>
 
@@ -23,6 +29,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+button {
+  margin-top: 16px;
+}
+.field{
+  margin: 16px;
+}
 h3 {
   margin: 40px 0 0;
 }

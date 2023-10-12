@@ -32,7 +32,6 @@ body{
   margin-top: 60px;
   background-color: #fff;
   width: 520px !important;
-  height: 300px !important;
   border-radius: 20px;
 }
 </style>
