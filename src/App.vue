@@ -1,18 +1,39 @@
 <template>
   <div id="app">
-    <exampleForm msg="Welcome to Your Vue.js App"/>
+    <div v-if="showList">
+      <example-list v-bind:item="selectedItem" @show-form="showForm" />
+    </div>
+    <div v-else>
+      <example-form v-bind:item="selectedItem" @return-to-list="returnToList" />
+    </div>
   </div>
 </template>
 
 <script>
-import exampleForm from './components/exampleForm.vue'
+import ExampleForm from "./components/exampleForm.vue";
+import ExampleList from "./components/exampleList.vue";
 
 export default {
   name: 'App',
+  data() {
+    return {
+      showList: true,
+      selectedItem: null,
+    };
+  },
+  methods: {
+    showForm() {
+      this.showList = false;
+    },
+    returnToList() {
+      this.showList = true;
+    },
+  },
   components: {
-    exampleForm
-  }
-}
+    ExampleForm,
+    ExampleList
+  },
+};
 </script>
 
 <style>
