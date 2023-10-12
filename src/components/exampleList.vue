@@ -1,6 +1,6 @@
 <template>
   <div class="field">
-    <b-table-lite striped hover :items="items"></b-table-lite>
+    <b-table-lite striped hover :items="items" @row-clicked="itemClicked" />
     <b-button type="submit" variant="primary" @click="showForm">teste</b-button>
   </div>
 </template>
@@ -23,7 +23,12 @@ export default {
   },
   methods: {
     showForm() { 
-      this.$emit("show-form");
+      const selectedItem = this.items[0];
+      this.$emit("show-form", selectedItem);
+    },
+    itemClicked(item) {
+      // Emitir o evento "item-selected" com os dados do item selecionado
+      this.$emit("item-selected", item);
     }
   }
 }

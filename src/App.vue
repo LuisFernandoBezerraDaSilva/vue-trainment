@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div v-if="showList">
-      <example-list v-bind:item="selectedItem" @show-form="showForm" />
+      <example-list @item-selected="showForm" />
     </div>
     <div v-else>
-      <example-form v-bind:item="selectedItem" @return-to-list="returnToList" />
+      <example-form :item="selectedItem" @return-to-list="returnToList" />
     </div>
   </div>
 </template>
@@ -22,7 +22,8 @@ export default {
     };
   },
   methods: {
-    showForm() {
+    showForm(item) {
+      this.selectedItem = item;
       this.showList = false;
     },
     returnToList() {

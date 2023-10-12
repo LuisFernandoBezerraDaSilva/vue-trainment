@@ -15,6 +15,7 @@
 
       <b-button type="submit" variant="primary">Enviar</b-button>
     </b-form>
+    <b-button @click="test">Enviar</b-button>
   </div>
 </template>
 
@@ -25,7 +26,8 @@ import { BForm, BFormGroup, BFormInput, BButton } from 'bootstrap-vue'
 export default {
   name: 'exampleList',
   props: {
-    msg: String
+    msg: String,
+    item: Object, 
   },
   data() {
     return {
@@ -41,6 +43,9 @@ export default {
     BButton
   },
   methods: {
+    test() {
+      console.log(JSON.parse(JSON.stringify(this.item)))
+    },
     enviarFormulario() {
       var urlApi = 'http://localhost:3003'
       console.log('Nome:', this.nome);
